@@ -576,7 +576,6 @@ module.exports.metadata =
   "cordova-plugin-badge": "0.8.7",
   "cordova-plugin-battery-status": "1.1.2",
   "cordova-plugin-camera": "2.1.1",
-  "cordova-plugin-console": "1.0.7",
   "cordova-plugin-contacts": "2.0.1",
   "cordova-plugin-datepicker": "0.9.3",
   "cordova-plugin-device": "1.1.7",
