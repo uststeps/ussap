@@ -8,7 +8,6 @@
     ],
     "plugins": {
       "cordova-plugin-battery-status": {},
-      "cordova-plugin-camera": {},
       "cordova-plugin-media-capture": {},
       "cordova-plugin-contacts": {},
       "cordova-plugin-device": {},
@@ -37,7 +36,6 @@
     "cordova-android": "^7.0.0",
     "cordova-android-support-gradle-release": "~1.4.4",
     "cordova-plugin-battery-status": "~1.1.1",
-    "cordova-plugin-camera": "~2.1.1",
     "cordova-plugin-contacts": "~2.0.1",
     "cordova-plugin-datepicker": "~0.9.3",
     "cordova-plugin-device": "~1.1.1",

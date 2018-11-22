@@ -206,9 +206,6 @@
     "cordova-plugin-battery-status": {
       "PACKAGE_NAME": "com.steps.ussap"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.steps.ussap"
-    },
     "cordova-plugin-contacts": {
       "PACKAGE_NAME": "com.steps.ussap"
     },
@@ -286,38 +283,6 @@
       "pluginId": "cordova-plugin-battery-status",
       "clobbers": [
         "navigator.battery"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.Camera",
-      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "Camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverOptions",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverOptions"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.camera",
-      "file": "plugins/cordova-plugin-camera/www/Camera.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "navigator.camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverHandle",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverHandle"
       ]
     },
     {
@@ -845,7 +810,6 @@
     "cordova-android-support-gradle-release": "1.4.4",
     "cordova-plugin-badge": "0.8.7",
     "cordova-plugin-battery-status": "1.1.2",
-    "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-contacts": "2.0.1",
     "cordova-plugin-datepicker": "0.9.3",
     "cordova-plugin-device": "1.1.7",
