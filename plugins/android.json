@@ -50,12 +50,6 @@
     "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.steps.ussap"
     },
-    "cordova-plugin-media": {
-      "PACKAGE_NAME": "com.steps.ussap"
-    },
-    "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.steps.ussap"
-    },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.steps.ussap"
     },

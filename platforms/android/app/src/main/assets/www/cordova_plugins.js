@@ -423,78 +423,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-media.MediaError",
-    "file": "plugins/cordova-plugin-media/www/MediaError.js",
-    "pluginId": "cordova-plugin-media",
-    "clobbers": [
-      "window.MediaError"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media.Media",
-    "file": "plugins/cordova-plugin-media/www/Media.js",
-    "pluginId": "cordova-plugin-media",
-    "clobbers": [
-      "window.Media"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.CaptureAudioOptions",
-    "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "CaptureAudioOptions"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.CaptureImageOptions",
-    "file": "plugins/cordova-plugin-media-capture/www/CaptureImageOptions.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "CaptureImageOptions"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.CaptureVideoOptions",
-    "file": "plugins/cordova-plugin-media-capture/www/CaptureVideoOptions.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "CaptureVideoOptions"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.CaptureError",
-    "file": "plugins/cordova-plugin-media-capture/www/CaptureError.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "CaptureError"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.MediaFileData",
-    "file": "plugins/cordova-plugin-media-capture/www/MediaFileData.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "MediaFileData"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.MediaFile",
-    "file": "plugins/cordova-plugin-media-capture/www/MediaFile.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "MediaFile"
-    ]
-  },
-  {
-    "id": "cordova-plugin-media-capture.capture",
-    "file": "plugins/cordova-plugin-media-capture/www/capture.js",
-    "pluginId": "cordova-plugin-media-capture",
-    "clobbers": [
-      "navigator.device.capture"
-    ]
-  },
-  {
     "id": "cordova-plugin-network-information.network",
     "file": "plugins/cordova-plugin-network-information/www/network.js",
     "pluginId": "cordova-plugin-network-information",
@@ -556,8 +484,6 @@ module.exports.metadata =
   "cordova-plugin-globalization": "1.0.9",
   "cordova-plugin-inappbrowser": "1.3.0",
   "cordova-plugin-local-notification": "0.9.0-beta.2",
-  "cordova-plugin-media": "2.2.0",
-  "cordova-plugin-media-capture": "1.2.0",
   "cordova-plugin-network-information": "1.2.1",
   "cordova-plugin-splashscreen": "3.2.2",
   "cordova-plugin-statusbar": "2.1.3",
