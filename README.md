@@ -1,5 +1,5 @@
-## This is an encrypted project'
-## encrypted with an obfuscator
+## This is an encrypted project
+encrypted with an obfuscator
 
 
 ## Usage
