@@ -1,6 +1,6 @@
-# Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
+## This is an encrypted project'
+## encrypted with an obfuscator
 
-A PhoneGap Hello World template
 
 ## Usage
 
