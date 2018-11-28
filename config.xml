@@ -49,9 +49,9 @@
         <allow-intent href="https://*/*/*/*" />
         <allow-intent href="http://*/*/*" />
         <allow-intent href="https://*/*/*" />
-        <allow-intent href="http://*/*" />
+        <allow-intent href="http://*/*" /> <!-- Allow navigation all -->
         <allow-intent href="https://*" />
-        <allow-intent href="https://*/*" />
+        <allow-intent href="https://*/*" /> <!-- Allow intent all -->
         <allow-intent href="tel:*" />
         <allow-intent href="sms:*" />
         <allow-intent href="mailto:*" />
