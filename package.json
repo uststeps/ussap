@@ -3,9 +3,7 @@
   "version": "1.0.1",
   "displayName": "UST Support Staff Portal",
   "cordova": {
-    "platforms": [
-      "android"
-    ],
+    "platforms": [],
     "plugins": {
       "cordova-plugin-battery-status": {},
       "cordova-plugin-contacts": {},
@@ -31,7 +29,6 @@
     }
   },
   "dependencies": {
-    "cordova-android": "^7.0.0",
     "cordova-android-support-gradle-release": "~1.4.4",
     "cordova-plugin-battery-status": "~1.1.1",
     "cordova-plugin-contacts": "~2.0.1",
