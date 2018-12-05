@@ -133,7 +133,9 @@
       "id": "cordova-android-support-gradle-release@~1.4.4"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "ANDROID_SUPPORT_VERSION": "27.+"
+    }
   },
   "cordova-plugin-badge": {
     "source": {
@@ -171,6 +173,30 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-local-notification@~0.9.0-beta.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@~2.1.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-media-capture": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-media-capture@~1.2.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-media": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-media@~2.2.0"
     },
     "is_top_level": true,
     "variables": {}

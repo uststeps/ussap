@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.steps.ussap" version="1.0.9" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <feature name="Badge">
+        <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
+    </feature>
+    <feature name="Battery">
+        <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+    </feature>
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <name>UST Support Staff Portal</name>
+    <description>
+    </description>
+    <author email="myust.steps@gmail.com" href="">
+        STEPS
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon qualifier="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+    <icon qualifier="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+    <icon qualifier="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
+    <icon qualifier="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
+    <icon qualifier="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
+    <icon qualifier="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+    <allow-intent href="http://*/*/*/*/*" />
+    <allow-intent href="https://*/*/*/*/*" />
+    <allow-intent href="http://*/*/*/*" />
+    <allow-intent href="https://*/*/*/*" />
+    <allow-intent href="http://*/*/*" />
+    <allow-intent href="https://*/*/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="android-version" value="7.0.0" />
+    <preference name="ios-version" value="4.5.4" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
+</widget>
