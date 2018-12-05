@@ -14,12 +14,6 @@
     "cordova-plugin-battery-status": {
       "PACKAGE_NAME": "com.steps.ussap"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.steps.ussap"
-    },
-    "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.steps.ussap"
-    },
     "cordova-plugin-media": {
       "PACKAGE_NAME": "com.steps.ussap"
     }
