@@ -14,7 +14,8 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="0" />
+    <preference name="SplashScreenDelay" value="0"/>
+	<preference name="FadeSplashScreenDuration" value="0"/>
 	<preference name="SplashScreen" value="none"/>
     <preference name="AndroidLaunchMode" value="singleTop" />
     <preference name="Fullscreen" value="false" />
