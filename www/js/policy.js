@@ -133,7 +133,15 @@ var app = {
 					ctype = "application/pdf";
 			   }
 			   	alert("OPENING FILES");
-			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
+				
+				var directoryX = cordova.file.externalDataDirectory;
+				if (device.platform == "Android") {
+					directoryX = cordova.file.externalDataDirectory;
+				} else if (device.platform == "iOS") {
+					directoryX = cordova.file.tempDirectory ;
+				};
+				
+			   app.savebase64AsPDF(directoryX, filename, data,
 				ctype
 			   //application/pdf" // for pdf
 			    // for docs
@@ -179,6 +187,7 @@ var app = {
 		// Convert the base64 string in a Blob
 		var DataBlob = app.b64toBlob(content,contentType);
 		
+		alert("DATA BLOB : " + DataBlob);
 		console.log("Starting to write the file :3");
 		
 		window.resolveLocalFileSystemURL(folderpath, 
@@ -196,9 +205,10 @@ var app = {
 							, 
 							{
 								error : function(e){ 
-									//global.msg(e.status + " : " + e.message);
+									global.msg(e.status + " : " + e.message);
 									
 									if (e.message == 9 || e.message == "9") {
+								
 										$("#modalMessage").val("No application found for this document type.");
 									}
 									
@@ -211,7 +221,7 @@ var app = {
 						);
 						
 					}, function(){
-						//alert('Unable to save file in path '+ folderpath);
+						alert('Unable to save file in path '+ folderpath);
 					});
 				});
 			}
