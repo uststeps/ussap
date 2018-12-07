@@ -93,7 +93,7 @@ var app = {
 		}
     }
     ,
-	getBase64File: function(filename) {]
+	getBase64File: function(filename) {
 		alert("Fetching files");
 		$.ajax({
             url      : localStorage.getItem("server") + "downloads/getBase64",
