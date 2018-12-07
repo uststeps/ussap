@@ -128,7 +128,14 @@ var app = {
 					ctype = "application/pdf";
 			   }
 			   
-			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
+			   	var directoryX = cordova.file.externalDataDirectory;
+				if (device.platform == "Android") {
+					directoryX = cordova.file.externalDataDirectory;
+				} else if (device.platform == "iOS") {
+					directoryX = cordova.file.tempDirectory ;
+				};
+				
+			   app.savebase64AsPDF(directoryX, filename, data,
 				ctype
 			   //application/pdf" // for pdf
 			    // for docs

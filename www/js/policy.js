@@ -94,7 +94,7 @@ var app = {
     }
     ,
 	getBase64File: function(filename) {
-		alert("Fetching files");
+		//alert("Fetching files");
 		$.ajax({
             url      : localStorage.getItem("server") + "downloads/getBase64",
             type     : "POST",
@@ -105,7 +105,7 @@ var app = {
             },
             success: function(data) { 
                //global.msg(JSON.stringify(data));
-			   	alert("FILES FETCHED");
+			   //alert("FILES FETCHED");
 			   var extension = filename.substr( (filename.lastIndexOf('.') +1) );
 			   var ctype = "";
 			   //alert(extension);
@@ -132,7 +132,7 @@ var app = {
 				default:
 					ctype = "application/pdf";
 			   }
-			   	alert("OPENING FILES");
+			   	//alert("OPENING FILES");
 				
 				var directoryX = cordova.file.externalDataDirectory;
 				if (device.platform == "Android") {
@@ -146,13 +146,13 @@ var app = {
 			   //application/pdf" // for pdf
 			    // for docs
 			   );
-			   	alert("FILE OPENNED");
+			   //	alert("FILE OPENNED");
             },
             error: function(jqXHR	, textStatus, errorThrown) {  
 					//alert("ERROR ");
-			  alert(JSON.stringify(jqXHR));
-			  alert("TEXT STATUS:" + JSON.stringify(textStatus));
-			  alert("ERROR THROWN: " + JSON.stringify(errorThrown));
+			  //alert(JSON.stringify(jqXHR));
+			  //alert("TEXT STATUS:" + JSON.stringify(textStatus));
+			  //alert("ERROR THROWN: " + JSON.stringify(errorThrown));
             }
         });
         
@@ -187,7 +187,7 @@ var app = {
 		// Convert the base64 string in a Blob
 		var DataBlob = app.b64toBlob(content,contentType);
 		
-		alert("DATA BLOB : " + DataBlob);
+		//alert("DATA BLOB : " + DataBlob);
 		console.log("Starting to write the file :3");
 		
 		window.resolveLocalFileSystemURL(folderpath, 
