@@ -93,18 +93,19 @@ var app = {
 		}
     }
     ,
-	getBase64File: function(filename) {
+	getBase64File: function(filename) {]
+		alert("Fetching files");
 		$.ajax({
             url      : localStorage.getItem("server") + "downloads/getBase64",
             type     : "POST",
             beforeSend: function(xhr){
                xhr.setRequestHeader('filename',filename);  
 			   xhr.setRequestHeader('ecode',localStorage.getItem("ecode"));
-				$("#modalMessage").val("Loading file please wait...");
+			   $("#modalMessage").val("Loading file please wait...");
             },
             success: function(data) { 
                //global.msg(JSON.stringify(data));
-			   
+			   	alert("FILES FETCHED");
 			   var extension = filename.substr( (filename.lastIndexOf('.') +1) );
 			   var ctype = "";
 			   //alert(extension);
@@ -131,17 +132,19 @@ var app = {
 				default:
 					ctype = "application/pdf";
 			   }
-			   
+			   	alert("OPENING FILES");
 			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
 				ctype
 			   //application/pdf" // for pdf
 			    // for docs
 			   );
+			   	alert("FILE OPENNED");
             },
             error: function(jqXHR	, textStatus, errorThrown) {  
-               //alert(JSON.stringify(jqXHR));
-			   //alert("TEXT STATUS:" + JSON.stringify(textStatus));
-			   //alert("ERROR THROWN: " + JSON.stringify(errorThrown));
+					//alert("ERROR ");
+			  alert(JSON.stringify(jqXHR));
+			  alert("TEXT STATUS:" + JSON.stringify(textStatus));
+			  alert("ERROR THROWN: " + JSON.stringify(errorThrown));
             }
         });
         
