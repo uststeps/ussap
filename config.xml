@@ -19,7 +19,9 @@
 	<preference name="SplashScreen" value="none"/>
     <preference name="AndroidLaunchMode" value="singleTop" />
     <preference name="Fullscreen" value="false" />
-    <preference name="StatusBarStyle" value="blackopaque" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#2D81C1" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
