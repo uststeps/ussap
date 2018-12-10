@@ -487,10 +487,9 @@ var app = {
 				*WORKS BUT APP NEED TO BE MINIMIZED NOT CLOSED
 			*/	
 			
-			alert("Trigger set");
 	
 			cordova.plugins.notification.local.on("trigger", function(notification) {
-				alert("TRIGGER FIRED");
+
 				if (notification.data.processor) {
 				$.ajax({
 					url       : localStorage.getItem("server") + "service/serverdt",
@@ -501,7 +500,7 @@ var app = {
 					},  
 					success: function(msg) { 
 					   //global.msg(msg["date"]);
-					   alert("got server response");
+				
 					   var year 	= msg["date"].split("/")[2];
 					   var month 	= msg["date"].split("/")[0];
 					   var day 		= msg["date"].split("/")[1];
@@ -515,7 +514,7 @@ var app = {
 					   app.getDTRRecord(msg["date"], notification.data.sort);
 					},
 					error: function(jqXHR	, textStatus, errorThrown) { 
-					  alert("no server response");
+				
 					   //alert(JSON.stringify(jqXHR));
 					   //alert(JSON.stringify(textStatus));
 					   //alert(JSON.stringify(errorThrown));
