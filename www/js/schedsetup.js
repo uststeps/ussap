@@ -487,7 +487,7 @@ var app = {
 				*WORKS BUT APP NEED TO BE MINIMIZED NOT CLOSED
 			*/	
 			
-
+			alert("Trigger set");
 	
 			cordova.plugins.notification.local.on("trigger", function(notification) {
 				alert("TRIGGER FIRED");
