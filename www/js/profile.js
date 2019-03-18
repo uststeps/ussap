@@ -87,7 +87,7 @@ var app = {
 						});
 							
 						app.requestRest(parseInt(localStorage.getItem("curinfo")));
-						this.getInfoList();
+						app.getInfoList();
 					 },
 					 error: function(jqXHR	, textStatus, errorThrown) {
 						alert("There was a server error, please reload the app", "Internal Error");
