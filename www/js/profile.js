@@ -32,14 +32,13 @@ var app = {
 		$("#botnav-profile").addClass("text-warning");
 		
 		alert("AFTER THIS IS BIND EVENT");
-		
-        app.bindEvents();
+		app.getInfoList();
+       
   
     },
     
     bindEvents: function() {
         document.addEventListener('deviceready', app.onDeviceReady, false);
-
 			   
     },
 
@@ -660,7 +659,7 @@ var app = {
 					app.setProfile(msg, x);
 					
 				});
-				app.getInfoList();
+			
              },
              error: function(jqXHR	, textStatus, errorThrown) {
                 //global.msg(JSON.stringify(jqXHR));
@@ -718,7 +717,7 @@ var app = {
 						 '<option value="' + i.toString() + '" ' + isSelected + ' >' + data[i.toString()] + '</option>'
 					);
 				}
-				
+				 app.bindEvents();
              },
              error: function(jqXHR	, textStatus, errorThrown) {
                 alert("There was a problem deleting the data, please try again");
