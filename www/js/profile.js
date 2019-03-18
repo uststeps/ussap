@@ -37,12 +37,12 @@ var app = {
   
     },
     
-    bindEvents: function() {
-         app.onDeviceReady();
+    bindEvents: function(ids) {
+         app.onDeviceReady(ids);
 			   
     },
 
-    onDeviceReady: function() {
+    onDeviceReady: function(ids) {
 		//alert("ON DEVICE READY FIRED");
 		//global.sys( "FULL EMPNUMBER: " + localStorage.getItem("full_empnumber"));
         //************************************************************************
@@ -62,7 +62,7 @@ var app = {
 							
 							//alert("download error source " + error.source);
 							//global.sys("download error target " + error.target);
-							alert("download error code" 	  + error.code);
+							//alert("download error code" 	  + error.code);
 						},
 						true,
 						{
@@ -87,7 +87,7 @@ var app = {
 							positions[e["id"]] = e["name"];
 						});
 							
-						app.requestRest(parseInt(localStorage.getItem("curinfo")));
+						app.requestRest(ids);
 						
 					 },
 					 error: function(jqXHR	, textStatus, errorThrown) {
@@ -717,7 +717,7 @@ var app = {
 						 '<option value="' + i.toString() + '" ' + isSelected + ' >' + data[i.toString()] + '</option>'
 					);
 				}
-				 app.bindEvents();
+				 app.bindEvents($("#infoSelect").val());
              },
              error: function(jqXHR	, textStatus, errorThrown) {
                 alert("There was a problem deleting the data, please try again");
