@@ -1,11 +1,11 @@
 //localStorage.setItem("ecode" , "aaa");
 localStorage.setItem("ecode" 		, "u9n4mT^a|X!545P"	); // Same as Server code --HeaderParam xml ecode 
-localStorage.setItem("isEmu" 		, "true"	);
+localStorage.setItem("isEmu" 		, "false"	);
 localStorage.setItem("showAlert"	, "true"	);
-localStorage.setItem("isBypass"		, "true"	);
+localStorage.setItem("isBypass"		, "false"	);
 localStorage.setItem("isRemember" 	, "false"	);
 localStorage.setItem("curinfo"		, "0"		);
-localStorage.setItem("version" 		, "1.0.6p"  );
+localStorage.setItem("version" 		, "2.0.0"  );
 
 localStorage.setItem("server"	, "http://10.1.16.29:7101/restServiceUSSAP/resources/"		);
 //localStorage.setItem("server"		, "http://172.24.0.120:9279/restServiceUSSAP/resources/"	);
