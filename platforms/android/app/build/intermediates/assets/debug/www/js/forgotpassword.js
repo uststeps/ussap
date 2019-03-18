@@ -4,11 +4,11 @@ var app = {
 		
 		
 		
-        this.bindEvents();
+        app.bindEvents();
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.onDeviceReady();
     }, 
 
     onDeviceReady: function() {

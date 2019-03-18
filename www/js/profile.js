@@ -32,6 +32,9 @@ var app = {
 		$("#botnav-profile").addClass("text-warning");
 		
 		//alert("AFTER THIS IS BIND EVENT");
+		
+		$("#nameholder"	).html(localStorage.getItem("full_name"));
+		$("#numholder"	).html(empnumber);
 		app.getInfoList();
        
   
@@ -99,8 +102,7 @@ var app = {
 		
 		//alert("GOT PAST ajax");
 
-		$("#nameholder"	).html(localStorage.getItem("full_name"));
-		$("#numholder"	).html(localStorage.getItem("empnumber"));
+	
 		
 		
 	

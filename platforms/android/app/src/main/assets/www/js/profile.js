@@ -31,20 +31,22 @@ var app = {
 
 		$("#botnav-profile").addClass("text-warning");
 		
+		//alert("AFTER THIS IS BIND EVENT");
 		
-		
-        this.bindEvents();
+		$("#nameholder"	).html(localStorage.getItem("full_name"));
+		$("#numholder"	).html(empnumber);
+		app.getInfoList();
+       
   
     },
     
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-
+    bindEvents: function(ids) {
+         app.onDeviceReady(ids);
 			   
     },
 
-    onDeviceReady: function() {
-
+    onDeviceReady: function(ids) {
+		//alert("ON DEVICE READY FIRED");
 		//global.sys( "FULL EMPNUMBER: " + localStorage.getItem("full_empnumber"));
         //************************************************************************
         /* DOWNLOAD IMAGE TEST */
@@ -63,7 +65,7 @@ var app = {
 							
 							//alert("download error source " + error.source);
 							//global.sys("download error target " + error.target);
-							alert("download error code" 	  + error.code);
+							//alert("download error code" 	  + error.code);
 						},
 						true,
 						{
@@ -73,6 +75,8 @@ var app = {
 							}
 						}
 		);
+		
+		//alert("GOT PAST download, going to ajax");
 		
 		$.ajax({
 					url        : localStorage.getItem("server") + "service/jobpositionlist", 
@@ -86,8 +90,8 @@ var app = {
 							positions[e["id"]] = e["name"];
 						});
 							
-						app.requestRest(parseInt(localStorage.getItem("curinfo")));
-						app.getInfoList();
+						app.requestRest(ids);
+						
 					 },
 					 error: function(jqXHR	, textStatus, errorThrown) {
 						alert("There was a server error, please reload the app", "Internal Error");
@@ -95,9 +99,10 @@ var app = {
 					 }
 		}); 
         /**/
+		
+		//alert("GOT PAST ajax");
 
-		$("#nameholder"	).html(localStorage.getItem("full_name"));
-		$("#numholder"	).html(localStorage.getItem("empnumber"));
+	
 		
 		
 	
@@ -110,7 +115,7 @@ var app = {
     onInfoSelect: function(info) {
 	   var x =  $("#infoSelect").val();
 	   localStorage.setItem("curinfo",x.toString());
-       this.requestRest(x );
+       app.requestRest(x );
 
     },
 	
@@ -656,9 +661,10 @@ var app = {
 					app.setProfile(msg, x);
 					
 				});
+			
              },
              error: function(jqXHR	, textStatus, errorThrown) {
-                //global.msg(JSON.stringify(jqXHR));
+                alert(JSON.stringify(jqXHR));
              }
         });     
     },
@@ -713,7 +719,7 @@ var app = {
 						 '<option value="' + i.toString() + '" ' + isSelected + ' >' + data[i.toString()] + '</option>'
 					);
 				}
-				
+				 app.bindEvents($("#infoSelect").val());
              },
              error: function(jqXHR	, textStatus, errorThrown) {
                 alert("There was a problem deleting the data, please try again");

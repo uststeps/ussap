@@ -10,7 +10,7 @@ var app = {
     
     },
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.onDeviceReady();
     },
 
     onDeviceReady: function() {

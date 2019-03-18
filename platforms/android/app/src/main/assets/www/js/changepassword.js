@@ -16,10 +16,10 @@ var app = {
         $("#sidenav"      ).load("inc.sidenav.html");
 		$("#botnav_change").addClass("text-warning");
 
-        this.bindEvents();
+        app.bindEvents();
     },
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.addEventListener();
     },
 
     onDeviceReady: function() {

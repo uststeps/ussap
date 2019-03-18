@@ -110,12 +110,12 @@ var app = {
 			$("#notifSwitch").prop('checked', false);
 		}
 		
-        this.bindEvents();
+        app.bindEvents();
 		 
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.onDeviceReady();
 
 			   
     },

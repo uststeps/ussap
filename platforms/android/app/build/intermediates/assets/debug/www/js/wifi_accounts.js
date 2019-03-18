@@ -18,11 +18,11 @@ var app = {
  
         $("#sidenav"    ).load("inc.sidenav.html"    ); 
         $("#botnav_history").addClass("text-warning");
-        this.bindEvents();
+        app.bindEvents();
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', app.onDeviceReady, false);
+        app.onDeviceReady();
     },
 
     onDeviceReady: function() {
