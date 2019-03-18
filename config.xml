@@ -17,6 +17,8 @@
     <preference name="SplashScreenDelay" value="0" />
     <preference name="AndroidLaunchMode" value="singleTop" />
     <preference name="Fullscreen" value="false" />
+	<preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#2D81C1" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
 	<preference name="SplashScreen" value="none"/>
