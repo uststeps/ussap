@@ -36,7 +36,6 @@
     <plugin name="cordova-plugin-media" source="npm" spec="~2.2.0" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-dialogs" spec="~1.2.1" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.5.1" />
@@ -124,4 +123,5 @@
     </plugin>
     <engine name="android" spec="^7.1.4" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
 </widget>
