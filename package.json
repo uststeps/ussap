@@ -9,7 +9,6 @@
     "plugins": {
       "cordova-plugin-battery-status": {},
       "cordova-plugin-camera": {},
-      "cordova-plugin-media-capture": {},
       "cordova-plugin-contacts": {},
       "cordova-plugin-device": {},
       "cordova-plugin-device-motion": {},
@@ -51,7 +50,6 @@
     "cordova-plugin-inappbrowser": "~1.3.0",
     "cordova-plugin-local-notification": "~0.9.0-beta.2",
     "cordova-plugin-media": "~2.2.0",
-    "cordova-plugin-media-capture": "~1.2.0",
     "cordova-plugin-network-information": "~1.2.0",
     "cordova-plugin-splashscreen": "~3.2.1",
     "cordova-plugin-statusbar": "~2.1.2",
