@@ -19,6 +19,7 @@
     <preference name="Fullscreen" value="false" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
+	<preference name="SplashScreen" value="none"/>
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
