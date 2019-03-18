@@ -113,7 +113,7 @@ var app = {
     onInfoSelect: function(info) {
 	   var x =  $("#infoSelect").val();
 	   localStorage.setItem("curinfo",x.toString());
-       this.requestRest(x );
+       app.requestRest(x );
 
     },
 	
@@ -662,7 +662,7 @@ var app = {
 			
              },
              error: function(jqXHR	, textStatus, errorThrown) {
-                //global.msg(JSON.stringify(jqXHR));
+                alert(JSON.stringify(jqXHR));
              }
         });     
     },
