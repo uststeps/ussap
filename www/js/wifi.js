@@ -60,10 +60,10 @@ var app = {
 				
 		
 		
-        this.bindEvents();
+        app.bindEvents();
     },
     bindEvents: function() {
-       document.addEventListener('deviceready', app.onDeviceReady, false);
+       app.onDeviceReady();
     },
 
     onDeviceReady: function() {

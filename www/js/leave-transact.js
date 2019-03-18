@@ -65,12 +65,12 @@ var app = {
         $("#sidenav").load("inc.sidenav.html");
 		$("#botnav-profile").addClass("text-warning");
 		
-        this.bindEvents();
+        app.bindEvents();
   
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+       app.onDeviceReady();
 
 			   
     },

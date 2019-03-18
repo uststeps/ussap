@@ -43,7 +43,7 @@ var app = {
     },
 
     onDeviceReady: function() {
-		alert("ON DEVICE READY FIRED");
+		//alert("ON DEVICE READY FIRED");
 		//global.sys( "FULL EMPNUMBER: " + localStorage.getItem("full_empnumber"));
         //************************************************************************
         /* DOWNLOAD IMAGE TEST */
@@ -73,7 +73,7 @@ var app = {
 						}
 		);
 		
-		alert("GOT PAST download, going to ajax");
+		//alert("GOT PAST download, going to ajax");
 		
 		$.ajax({
 					url        : localStorage.getItem("server") + "service/jobpositionlist", 
@@ -97,7 +97,7 @@ var app = {
 		}); 
         /**/
 		
-		alert("GOT PAST ajax");
+		//alert("GOT PAST ajax");
 
 		$("#nameholder"	).html(localStorage.getItem("full_name"));
 		$("#numholder"	).html(localStorage.getItem("empnumber"));

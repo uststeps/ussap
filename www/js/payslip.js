@@ -21,7 +21,7 @@ var app = {
 
         $(".payslipTable" ).hide();
        
-        this.bindEvents();
+        app.bindEvents();
         
         $("#sidenav").load("inc.sidenav.html");
 		$("#botnav-payslip").addClass("text-warning");
@@ -30,7 +30,7 @@ var app = {
   
     },
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.onDeviceReady();
     },
 
     onDeviceReady: function() {

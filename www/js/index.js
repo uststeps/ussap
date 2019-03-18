@@ -99,7 +99,7 @@ var app = {
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+      app.onDeviceReady();
 		// Exits The Application when on Log In Page/Index //
 		document.addEventListener("backbutton", function(e){
 			navigator.notification.confirm(
