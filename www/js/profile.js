@@ -31,20 +31,20 @@ var app = {
 
 		$("#botnav-profile").addClass("text-warning");
 		
+		alert("AFTER THIS IS BIND EVENT");
 		
-		
-        this.bindEvents();
+        app.bindEvents();
   
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', app.onDeviceReady, false);
 
 			   
     },
 
     onDeviceReady: function() {
-
+		alert("ON DEVICE READY FIRED");
 		//global.sys( "FULL EMPNUMBER: " + localStorage.getItem("full_empnumber"));
         //************************************************************************
         /* DOWNLOAD IMAGE TEST */
@@ -74,6 +74,8 @@ var app = {
 						}
 		);
 		
+		alert("GOT PAST download, going to ajax");
+		
 		$.ajax({
 					url        : localStorage.getItem("server") + "service/jobpositionlist", 
 					type       : "GET",
@@ -87,7 +89,7 @@ var app = {
 						});
 							
 						app.requestRest(parseInt(localStorage.getItem("curinfo")));
-						app.getInfoList();
+						
 					 },
 					 error: function(jqXHR	, textStatus, errorThrown) {
 						alert("There was a server error, please reload the app", "Internal Error");
@@ -95,6 +97,8 @@ var app = {
 					 }
 		}); 
         /**/
+		
+		alert("GOT PAST ajax");
 
 		$("#nameholder"	).html(localStorage.getItem("full_name"));
 		$("#numholder"	).html(localStorage.getItem("empnumber"));
@@ -656,6 +660,7 @@ var app = {
 					app.setProfile(msg, x);
 					
 				});
+				app.getInfoList();
              },
              error: function(jqXHR	, textStatus, errorThrown) {
                 //global.msg(JSON.stringify(jqXHR));
