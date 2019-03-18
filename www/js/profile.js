@@ -32,7 +32,7 @@ var app = {
 		$("#botnav-profile").addClass("text-warning");
 		
 		
-		this.getInfoList();
+		
         this.bindEvents();
   
     },
@@ -60,9 +60,10 @@ var app = {
 						  
 						},
 						function(error) {
-							//global.sys("download error source " + error.source);
+							
+							//alert("download error source " + error.source);
 							//global.sys("download error target " + error.target);
-							//global.sys("download error code" 	  + error.code);
+							alert("download error code" 	  + error.code);
 						},
 						true,
 						{
@@ -86,9 +87,10 @@ var app = {
 						});
 							
 						app.requestRest(parseInt(localStorage.getItem("curinfo")));
+						this.getInfoList();
 					 },
 					 error: function(jqXHR	, textStatus, errorThrown) {
-						global.msg("There was a server error, please reload the app", "Internal Error");
+						alert("There was a server error, please reload the app", "Internal Error");
 						//global.msg(JSON.stringify(jqXHR));
 					 }
 		}); 
