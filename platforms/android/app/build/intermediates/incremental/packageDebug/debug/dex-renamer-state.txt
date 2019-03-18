@@ -1,0 +1,4 @@
+#Mon Mar 18 09:37:36 SGT 2019
+base.0=D\:\\MobileProject\\UST Support Portal-phase2\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=D\:\\MobileProject\\UST Support Portal-phase2\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

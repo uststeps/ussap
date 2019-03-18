@@ -1,4 +1,4 @@
-var sldieout;
+var slideout;
 var currentProfile = 0;
 var currentSlide = "close";
 var empnumber;

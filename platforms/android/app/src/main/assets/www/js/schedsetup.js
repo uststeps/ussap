@@ -260,8 +260,21 @@ var app = {
 		window.location.replace("index.html");
 	},
 	
+	validate: function() {
+		if ($("#sched_day").val() == "-1"){
+			$("#sched_day").attr("class","form-control border border-danger");
+			return false;
+		} else {
+			$("#sched_day").attr("class","form-control border");
+		}
+		
+		return true;
+	},
+	
 	onSubmit: function() {
-		var newEntry = "";
+		
+		if (app.validate()){
+				var newEntry = "";
 		
 		// BUG : Sometimes scheduling is delayed
 		//alert(JSON.stringify(jsn));
@@ -362,6 +375,10 @@ var app = {
 		*/
 		console.log("DONE SUBMIT");
 		window.location = "schedsetup.html";
+			
+		};
+		
+	
 	},
 	
 	
@@ -487,8 +504,8 @@ var app = {
 				*WORKS BUT APP NEED TO BE MINIMIZED NOT CLOSED
 			*/	
 			
-
-	
+		
+			// WILL FIRE IF APP MINIMZED------------------------------------------------------
 			cordova.plugins.notification.local.on("trigger", function(notification) {
 				
 				if (notification.data.processor) {
@@ -522,7 +539,7 @@ var app = {
 				});
 				}
 			});
-			/**/
+			//----------------------------------------------------------------------------------
 			
 			
 			localStorage.setItem("notification-"+ localStorage.getItem("empnumber"), "true" );
@@ -560,12 +577,7 @@ var app = {
 			var amIn 	= false;
 			var amOut 	= false;
 			var pmIn 	= false;
-			var pmOut	= false;
-			
-			
-			
-			
-			
+			var pmOut	= false;		
 			/* 
 			
 			
@@ -593,14 +605,10 @@ var app = {
 					}
 				}
 			});
-			
-			
-		
-			
 			/* FLAG CHECKER  */
 			//  console.log("############ NOTIF ID :" + notifId);					
 			//  console.log("############ FLAGS    :" + amIn + " : " + amOut + " : " + pmIn + " : " + pmOut);
-			/* */
+			/*				 */
 			/*
 				notif id = 1 == AM IN
 				notif id = 2 == AM OUT 

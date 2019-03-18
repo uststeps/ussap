@@ -6,6 +6,9 @@
 /*Google Fonts*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 
+main {
+	padding-bottom:100px;
+}
 
 body,html {
     font-family: 'Roboto', sans-serif;
