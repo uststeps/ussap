@@ -31,14 +31,14 @@ var app = {
 
 		$("#botnav-profile").addClass("text-warning");
 		
-		alert("AFTER THIS IS BIND EVENT");
+		//alert("AFTER THIS IS BIND EVENT");
 		app.getInfoList();
        
   
     },
     
     bindEvents: function() {
-        document.addEventListener('deviceready', app.onDeviceReady, false);
+         app.onDeviceReady();
 			   
     },
 
