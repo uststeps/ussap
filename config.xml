@@ -122,6 +122,6 @@
     </plugin>
     <plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
     <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
-    <engine name="android" spec="^7.1.4" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.5.1" />
+    <engine name="android" spec="^7.1.4" />
 </widget>
