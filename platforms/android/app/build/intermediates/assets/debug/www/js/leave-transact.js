@@ -46,7 +46,8 @@ var app = {
         /*
              Slide out config
         */
-		empnumber = localStorage.getItem("empnumber");
+		//empnumber = localStorage.getItem("empnumber");
+		empnumber = "1689";
         slideout = new Slideout({
             'panel'    : document.getElementById('panel'   ),
             'menu'     : document.getElementById('sidenav' ),
@@ -122,6 +123,8 @@ var app = {
 								}
 								
 								
+								
+								
 								for (x=totalList-1; x>=0 ; x--) {
 									//alert(x);
 									//alert( msg["leave-list"][x.toString()]["leave_id"] );
@@ -132,6 +135,14 @@ var app = {
 									var recIns2 = "";
 									if (msg["leave-status"]["hr"][msg["leave-list"][x.toString()]["leave_id"]]!=null){
 										recIns2 =msg["leave-status"]["hr"][msg["leave-list"][x.toString()]["leave_id"]]["rec_ins_dt"];
+									}
+									
+									var leaveName = "";
+									
+									if (msg["leave-list"][x.toString()]["leave_type_name"] == "BIRTHDAY LEAVE"){
+										leaveName = "BL";
+									} else {
+										leaveName = msg["leave-list"][x.toString()]["leave_type_name"];
 									}
 									
 									var rowIndex = 0;
@@ -149,7 +160,7 @@ var app = {
 											+ '	<div class="col-4 font-weight-bold border-right" >'
 											+		'<div class="row">'
 											+			'<div class="col-12 font-weight-bold text-warning" align="center">'
-											+				'<h1>' + msg["leave-list"][x.toString()]["leave_type_name"] + '</h1>'
+											+				'<h1>' + leaveName  + '</h1>'
 											+ 			'</div>'
 											+ 			'<div class="col-12 font-weight-bold text-secondary" align="center">'
 											+ 				msg["leave-list"][x.toString()]["leave_date"] 
