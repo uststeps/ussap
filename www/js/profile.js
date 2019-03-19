@@ -722,7 +722,7 @@ var app = {
 				 app.bindEvents($("#infoSelect").val());
              },
              error: function(jqXHR	, textStatus, errorThrown) {
-                alert("There was a problem deleting the data, please try again");
+               alert(JSON.stringify(jqXHR));
              }
         });     
     },
