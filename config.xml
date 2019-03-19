@@ -93,7 +93,9 @@
         <splash src="www/res/screen/ios/Default@3x~iphone~comany.png" />
         <splash src="www/res/screen/ios/Default@2x~ipad~anyany.png" />
         <splash src="www/res/screen/ios/Default@2x~ipad~comany.png" />
-        <allow-intent href="itms:*" />
+        <access origin='*' allows-arbitrary-loads-for-media='true' allows-arbitrary-loads-in-web-content='true' allows-local-networking='true' />
+
+		<allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <allow-intent href="https://*" />
         <allow-intent href="http://*/*" />
@@ -106,7 +108,8 @@
 	  <allow-intent href="gap://*" />
 		
     </platform>
-    <access origin="*" />
+	<access origin='*' allows-arbitrary-loads-for-media='true' allows-arbitrary-loads-in-web-content='true' allows-local-networking='true' />
+
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
