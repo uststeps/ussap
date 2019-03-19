@@ -67,7 +67,7 @@ var app = {
         $("#sidenav").load("inc.sidenav.html");
 		$("#botnav-profile").addClass("text-warning");
 		
-        app.bindEvents();
+   
   
     },
     
@@ -132,6 +132,7 @@ var app = {
 						xhr.setRequestHeader('ecode'     ,  localStorage.getItem("ecode") 	);
 					},
 					success: function(msg) { 
+						//alert(JSON.stringify(msg));
 						var toPassYear = year;
 						
 						if (year == "current") {toPassYear = parseInt(msg["0"]);} 
@@ -313,7 +314,7 @@ var app = {
 		var dayDiff = app.getDateDifference($("#date_from").val(), $("#date_to").val());
 		var enabledDays = {};
 		if (dayDiff <= 7) {
-			alert("isLess than");
+			
 			var counter = day;
 			enabledDays[daysOfWeek[counter]] = "true";	
 			for (x=0;x<dayDiff;x++){
@@ -328,28 +329,35 @@ var app = {
 		}
 		
 		$( ".daySelect" ).each(function( index ,obj) {
+			$(obj).val("");
 			if ($("#typeSelector").val() == "9FAA65992CFD1AA5557FFE22F191F793") {
 				// FOR ONLY
 				$("#date_to").hide();
 				if ($(obj).attr("id") != daysOfWeek[day]){
 					$(obj).prop("disabled","true");
+					$(obj).hide();
 				} else {
+					$(obj).show();
 					$(obj).removeAttr("disabled");
 				}
 			} else if ($("#typeSelector").val() == "02FFBD1C5AA4FAC2DCC599BB4CF4A761" ) {
 				// ONWARDS 
 				$("#date_to").hide();
 				$(obj).removeAttr("disabled");
-			} else {
+				$(obj).show();
+			} else if ($("#typeSelector").val() == "626F3AA8014AB6FD3D0F87E311D49C9A"){
 				// to 
 				$("#date_to").show();
 				if (dayDiff >= 7){
 					$(obj).removeAttr("disabled");
+					$(obj).show();
 				} else {
 					if (enabledDays[$(obj).attr("id") ] == null){
 						$(obj).prop("disabled","true");
+						$(obj).hide();
 					} else {
-							$(obj).removeAttr("disabled");
+						$(obj).removeAttr("disabled");
+						$(obj).show();
 					}
 				};
 				

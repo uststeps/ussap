@@ -91,11 +91,13 @@ var months2 = {
 	NOV : "11",
 	DEC : "12"
 };
+var notifPlugin;
 /**/
 var app = {
 	
     initialize: function() {
-        this.bindEvents();
+		notifPlugin = cordova.plugins.notification.local;
+        app.bindEvents();
     },
     
     bindEvents: function() {
@@ -117,10 +119,11 @@ var app = {
     }, 
 
     onDeviceReady: function() {
-
+		
+		alert(notifPlugin);
 		 
 		/* CANCEL ALL PENDING NOTIF WHEN INDEX LOADS */
-		cordova.plugins.notification.local.cancelAll(function(notification) {
+		notifPlugin.cancelAll(function(notification) {
 			console.log("notifications cancelled");
 		}, this);
 		

@@ -223,11 +223,9 @@
 
 			
     <script type="text/javascript"> 
-		
-		$( document ).ready(function() {
-			app.initialize();
-			app.initializeChangeSchedule();
-		});
+		app.initialize();
+		document.addEventListener("deviceready", app.initializeChangeSchedule, false); 
+
     </script>
 
 	

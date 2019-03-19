@@ -26,9 +26,9 @@
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-device@~1.1.1"
+      "id": "cordova-plugin-device"
     },
-    "is_top_level": true,
+    "is_top_level": false,
     "variables": {}
   },
   "cordova-plugin-device-motion": {
@@ -149,7 +149,9 @@
       "id": "cordova-android-support-gradle-release@~1.4.4"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "ANDROID_SUPPORT_VERSION": "27.+"
+    }
   },
   "cordova-plugin-badge": {
     "source": {
@@ -191,10 +193,18 @@
     "is_top_level": true,
     "variables": {}
   },
+  "cordova-plugin-app-event": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-app-event"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
   "cordova-plugin-local-notification": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-local-notification"
+      "id": "cordova-plugin-local-notification@0.8"
     },
     "is_top_level": true,
     "variables": {}

@@ -141,11 +141,9 @@
 
 
     <script type="text/javascript"> 
-       
-		$( document ).ready(function() {
-			 app.initialize();
-			app.getLeaveList_Initial();
-		});
+        app.initialize();
+		document.addEventListener("deviceready", app.getLeaveList_Initial, false); 
+
     </script>
 </body>
 

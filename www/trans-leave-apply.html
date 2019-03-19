@@ -237,11 +237,9 @@
 
 			
     <script type="text/javascript"> 
-		
-		$( document ).ready(function() {
-			app.initialize();
-			app.initializeApplication();
-		});
+		 app.initialize();
+		document.addEventListener("deviceready", app.initializeApplication, false); 
+
     </script>
 
 	

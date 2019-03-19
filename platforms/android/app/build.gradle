@@ -92,8 +92,6 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "../cordova-android-support-gradle-release/ussap-cordova-android-support-gradle-release.gradle"
-apply from: "../cordova-plugin-badge/ussap-badge.gradle"
-apply from: "../cordova-plugin-local-notification/ussap-localnotification.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -269,7 +267,6 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     compile "com.android.support:support-v4:+"
-    compile "com.android.support:support-v4:26.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

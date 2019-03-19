@@ -66,7 +66,7 @@ var app = {
         $("#sidenav").load("inc.sidenav.html");
 		$("#botnav-profile").addClass("text-warning");
 		
-        app.bindEvents();
+      
   
     },
     

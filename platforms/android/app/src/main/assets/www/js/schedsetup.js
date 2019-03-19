@@ -145,6 +145,8 @@ var app = {
 		//alert(localStorage.getItem("schedule-" + localStorage.getItem("empnumber")));
 		jsn = JSON.parse(localStorage.getItem("schedule-" + localStorage.getItem("empnumber")));
 	
+		//alert(JSON.stringify(jsn));
+	
 		//alert(localStorage.getItem("schedule-" + localStorage.getItem("empnumber")));
 		$.each(timedata, function(i,e){
 			$(".timepicker").append( 
@@ -152,14 +154,16 @@ var app = {
 			);
 		});
 		
+		//alert("GOT PAST: " + localStorage.getItem("notification-" + localStorage.getItem("empnumber")));
 		
 		if (localStorage.getItem("notification-" + localStorage.getItem("empnumber")) == "true") {	
-			cordova.plugins.notification.local.cancelAll(function(notification) {
+			
+			cordova.plugins.notification.local.clearAll(function(notification) {
 				console.log("notifications cancelled : BEFORE RE SCHEDULED");
 			}, this);
+			
 			app.toggleSwitch();
 		} 
-		
 		
 		
 		
@@ -546,7 +550,7 @@ var app = {
 			
 		} else {
 			
-			cordova.plugins.notification.local.cancelAll(function(notification) {
+			cordova.plugins.notification.local.clearAll(function(notification) {
 				console.log("notifications cancelled");
 			}, this);
 

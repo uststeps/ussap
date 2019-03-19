@@ -153,11 +153,9 @@
 
 
     <script type="text/javascript"> 
-		 
-		$( document ).ready(function() {
-			app.initialize();
-			app.getChangeSchedDetails();
-		});
+		app.initialize();
+		document.addEventListener("deviceready", app.getChangeSchedDetails, false); 
+
     </script>
 </body>
 

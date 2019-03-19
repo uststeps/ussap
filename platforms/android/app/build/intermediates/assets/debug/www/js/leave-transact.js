@@ -46,8 +46,8 @@ var app = {
         /*
              Slide out config
         */
-		//empnumber = localStorage.getItem("empnumber");
-		empnumber = "1689";
+		empnumber = localStorage.getItem("empnumber");
+		//empnumber = "1689";
         slideout = new Slideout({
             'panel'    : document.getElementById('panel'   ),
             'menu'     : document.getElementById('sidenav' ),
@@ -66,7 +66,7 @@ var app = {
         $("#sidenav").load("inc.sidenav.html");
 		$("#botnav-profile").addClass("text-warning");
 		
-        app.bindEvents();
+      
   
     },
     

@@ -69,7 +69,7 @@
 				<div class="p-4 m-0 mb-2 bg-warning text-dark">
 					<h5>Touch and hold to delete or edit Leave Application</h5>
 				</div>
-        <div class="bg-cream p-4" style="margin-bottom:100px;">
+        <div class="bg-cream p-4" style="padding-bottom:200px;">
 		
 				<div id="alert-leave" class="alert">
 					
@@ -141,11 +141,9 @@
 
 
     <script type="text/javascript"> 
-       
-		$( document ).ready(function() {
-			 app.initialize();
-			app.getLeaveList_Initial();
-		});
+        app.initialize();
+		document.addEventListener("deviceready", app.getLeaveList_Initial, false); 
+
     </script>
 </body>
 
