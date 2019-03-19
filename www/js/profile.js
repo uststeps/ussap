@@ -640,7 +640,7 @@ var app = {
 	},
 	
 	requestRest: function(x){
-		alert(localStorage.getItem("server"));
+		
 		currentProfile = x;
         $.ajax({
             url        : localStorage.getItem("server") + "profile/fetchProfile", 
@@ -696,6 +696,7 @@ var app = {
     },
 	
 	getInfoList: function(){
+		alert(localStorage.getItem("server"));
         $.ajax({
             url        : localStorage.getItem("server") + "profile/infoList", 
             type       : "POST",
