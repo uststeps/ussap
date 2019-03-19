@@ -67,6 +67,11 @@
         <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
             <string>Notification feature requires media access</string>
         </config-file>
+		<config-file platform="ios" target="*-Info.plist" parent="NSAppTransportSecurity">
+			<dict>
+				<key>NSAllowsArbitraryLoads</key><true/>
+			</dict>
+		</config-file>
         <icon height="1024" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="www/res/icon/ios/icon-small.png" width="29" />
         <icon height="58" src="www/res/icon/ios/icon-small@2x.png" width="58" />
