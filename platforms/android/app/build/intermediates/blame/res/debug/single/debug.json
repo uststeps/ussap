@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Jeremy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dc3fcf04610f890e0c5b4e44c117b8ad\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_remove.png.flat",
-        "source": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_remove.png"
-    },
-    {
         "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\Jeremy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dc3fcf04610f890e0c5b4e44c117b8ad\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_remove.png.flat",
+        "source": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_remove.png"
     },
     {
         "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_next_item.png.flat",
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_previous_item.png"
     },
     {
-        "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_next_item.png.flat",
-        "source": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_next_item.png"
-    },
-    {
         "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-ldpi_screen.png.flat",
         "source": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\src\\main\\res\\drawable-port-ldpi\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_next_item.png.flat",
+        "source": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_next_item.png"
     },
     {
         "merged": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",

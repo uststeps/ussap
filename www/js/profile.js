@@ -696,7 +696,7 @@ var app = {
     },
 	
 	getInfoList: function(){
-		alert(localStorage.getItem("server"));
+		//alert(localStorage.getItem("server"));
         $.ajax({
             url        : localStorage.getItem("server") + "profile/infoList", 
             type       : "POST",

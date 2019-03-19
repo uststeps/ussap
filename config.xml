@@ -60,18 +60,17 @@
         <allow-intent href="sms:*" />
         <allow-intent href="mailto:*" />
         <allow-intent href="geo:*" />
-		 <allow-intent href="*" />
-	  <allow-intent href="gap://*" />
     </platform>
     <platform name="ios">
         <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
             <string>Notification feature requires media access</string>
         </config-file>
-		<config-file platform="ios" target="*-Info.plist" parent="NSAppTransportSecurity">
-			<dict>
-				<key>NSAllowsArbitraryLoads</key><true/>
-			</dict>
-		</config-file>
+        <config-file parent="NSAppTransportSecurity" platform="ios" target="*-Info.plist">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true />
+            </dict>
+        </config-file>
         <icon height="1024" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="www/res/icon/ios/icon-small.png" width="29" />
         <icon height="58" src="www/res/icon/ios/icon-small@2x.png" width="58" />
@@ -98,9 +97,7 @@
         <splash src="www/res/screen/ios/Default@3x~iphone~comany.png" />
         <splash src="www/res/screen/ios/Default@2x~ipad~anyany.png" />
         <splash src="www/res/screen/ios/Default@2x~ipad~comany.png" />
-        <access origin='*' allows-arbitrary-loads-for-media='true' allows-arbitrary-loads-in-web-content='true' allows-local-networking='true' />
-
-		<allow-intent href="itms:*" />
+        <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <allow-intent href="https://*" />
         <allow-intent href="http://*/*" />
@@ -109,17 +106,11 @@
         <allow-intent href="sms:*" />
         <allow-intent href="mailto:*" />
         <allow-intent href="geo:*" />
-		 <allow-intent href="*" />
-	  <allow-intent href="gap://*" />
-		
     </platform>
-	<access origin='*' allows-arbitrary-loads-for-media='true' allows-arbitrary-loads-in-web-content='true' allows-local-networking='true' />
-
+    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
-	 <allow-intent href="*" />
-	  <allow-intent href="gap://*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
@@ -130,6 +121,6 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.5.1" />
     <plugin name="cordova-plugin-local-notification" spec="^0.8.4" />
-    <engine name="android" spec="^7.1.4" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
+    <engine name="android" spec="^7.1.4" />
 </widget>

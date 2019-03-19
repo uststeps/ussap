@@ -640,6 +640,7 @@ var app = {
 	},
 	
 	requestRest: function(x){
+		
 		currentProfile = x;
         $.ajax({
             url        : localStorage.getItem("server") + "profile/fetchProfile", 
@@ -695,6 +696,7 @@ var app = {
     },
 	
 	getInfoList: function(){
+		//alert(localStorage.getItem("server"));
         $.ajax({
             url        : localStorage.getItem("server") + "profile/infoList", 
             type       : "POST",
@@ -722,7 +724,7 @@ var app = {
 				 app.bindEvents($("#infoSelect").val());
              },
              error: function(jqXHR	, textStatus, errorThrown) {
-                alert("There was a problem deleting the data, please try again");
+               alert(JSON.stringify(jqXHR));
              }
         });     
     },
