@@ -640,6 +640,7 @@ var app = {
 	},
 	
 	requestRest: function(x){
+		alert(localStorage.getItem("server"));
 		currentProfile = x;
         $.ajax({
             url        : localStorage.getItem("server") + "profile/fetchProfile", 
