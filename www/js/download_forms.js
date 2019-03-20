@@ -178,7 +178,7 @@ var app = {
 		var DataBlob = app.b64toBlob(content,contentType);
 		
 		console.log("Starting to write the file :3");
-	
+		alert("TRYING TO WRITE FILE");
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
@@ -203,6 +203,7 @@ var app = {
 									// Error 9 if no default/installed word program
 								}, 
 								success : function(){
+									alert("FILE SUCCESFULLY DOWNLOADED");
 									$("#modalMessage").val("File succesfully downloaded");
 								} 
 							} 
@@ -218,6 +219,7 @@ var app = {
 				alert("ERROR FILE HANDLING");
 			}
 			);
+		alert("GOT PAST FILE SAVING ");
 	},
 	
     receivedEvent: function(id) {
