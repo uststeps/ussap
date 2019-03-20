@@ -174,7 +174,7 @@ var app = {
 		var DataBlob = app.b64toBlob(content,contentType);
 		
 		console.log("Starting to write the file :3");
-		
+		alert("starting to write the file");
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
