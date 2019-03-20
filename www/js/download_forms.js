@@ -131,7 +131,7 @@ var app = {
 					ctype = "application/pdf";
 			   }
 			   alert("GOING TO SAVE");
-			   alert("STORAGE DIRECTORY: " + applicationStorageDirectory + "/Documents" );
+			   alert("STORAGE DIRECTORY: " + cordova.file.applicationStorageDirectory + "/Documents" );
 			   alert("DATA DIRECTORY : " + cordova.file.dataDirectory);
 			   app.savebase64AsPDF(cordova.file.dataDirectory , filename, data,
 				ctype

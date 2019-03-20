@@ -131,7 +131,9 @@ var app = {
 					ctype = "application/pdf";
 			   }
 			   alert("GOING TO SAVE");
-			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
+			   alert("STORAGE DIRECTORY: " + applicationStorageDirectory + "/Documents" );
+			   alert("DATA DIRECTORY : " + cordova.file.dataDirectory);
+			   app.savebase64AsPDF(cordova.file.dataDirectory , filename, data,
 				ctype
 			   //application/pdf" // for pdf
 			    // for docs
@@ -179,6 +181,7 @@ var app = {
 		
 		console.log("Starting to write the file :3");
 		alert("TRYING TO WRITE FILE");
+		alert(folderpath);
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
