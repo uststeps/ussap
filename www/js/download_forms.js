@@ -205,7 +205,7 @@ var app = {
 						);
 						
 					}, function(){
-						//alert('Unable to save file in path '+ folderpath);
+						alert('Unable to save file in path '+ folderpath);
 					});
 				});
 			}
