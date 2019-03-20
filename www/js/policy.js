@@ -132,7 +132,7 @@ var app = {
 					ctype = "application/pdf";
 			   }
 			   
-			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
+			   app.savebase64AsPDF(cordova.file.dataDirectory, filename, data,
 				ctype
 			   //application/pdf" // for pdf
 			    // for docs
