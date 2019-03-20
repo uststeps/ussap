@@ -22,7 +22,7 @@ var app = {
         $("#sidenav"      ).load("inc.sidenav.html");
         
 		$("#botnav-forms").addClass("text-warning");
-		
+		alert("GOING BIND");
         app.bindEvents();
     },
     bindEvents: function() {
@@ -91,6 +91,7 @@ var app = {
 		//alert("TEST");
 	},
 	getBase64File: function(filename) {
+		alert("TRYING TO GET BASE 64");
 		$.ajax({
             url      : localStorage.getItem("server") + "downloads/getBase64",
             type     : "POST",
@@ -101,7 +102,8 @@ var app = {
             },
             success: function(data) { 
                //global.msg(JSON.stringify(data));
-			   
+			   alert("GOT BASE 64");
+			   alert(data);
 			   var extension = filename.substr( (filename.lastIndexOf('.') +1) );
 			   var ctype = "";
 			   //alert(extension);
@@ -128,7 +130,7 @@ var app = {
 				default:
 					ctype = "application/pdf";
 			   }
-			   
+			   alert("GOING TO SAVE");
 			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
 				ctype
 			   //application/pdf" // for pdf
@@ -173,7 +175,7 @@ var app = {
 	
 	savebase64AsPDF : function(folderpath,filename,content,contentType){
 		// Convert the base64 string in a Blob
-		var DataBlob = app.b64toBlobb64toBlob(content,contentType);
+		var DataBlob = app.b64toBlob(content,contentType);
 		
 		console.log("Starting to write the file :3");
 	
