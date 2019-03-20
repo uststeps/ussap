@@ -136,7 +136,7 @@ var app = {
 			   );
             },
             error: function(jqXHR	, textStatus, errorThrown) {  
-               //alert(JSON.stringify(jqXHR));
+               alert(JSON.stringify(jqXHR));
 			   //alert("TEXT STATUS:" + JSON.stringify(textStatus));
 			   //alert("ERROR THROWN: " + JSON.stringify(errorThrown));
             }

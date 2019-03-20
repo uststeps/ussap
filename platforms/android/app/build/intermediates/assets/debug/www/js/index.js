@@ -5,7 +5,7 @@ localStorage.setItem("showAlert"	, "true"	);
 localStorage.setItem("isBypass"		, "false"	);
 localStorage.setItem("isRemember" 	, "false"	);
 localStorage.setItem("curinfo"		, "0"		);
-localStorage.setItem("version" 		, "2.1.2"  );
+localStorage.setItem("version" 		, "2.1.3"  );
 
 //localStorage.setItem("server"	, "http://10.1.16.29:7101/restServiceUSSAP/resources/"		);
 //localStorage.setItem("server"		, "http://172.24.0.120:9279/restServiceUSSAP/resources/"	);

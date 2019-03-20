@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\values-gu_values-gu.arsc.flat",
+            "outputFile": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\values-km_values-km.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jeremy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dc3fcf04610f890e0c5b4e44c117b8ad\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\Jeremy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dc3fcf04610f890e0c5b4e44c117b8ad\\res\\values-km\\values-km.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -46,10 +46,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\values-km_values-km.arsc.flat",
+            "outputFile": "C:\\Users\\Jeremy\\Documents\\GitHub\\ussap\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\values-gu_values-gu.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jeremy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dc3fcf04610f890e0c5b4e44c117b8ad\\res\\values-km\\values-km.xml",
+                    "source": "C:\\Users\\Jeremy\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dc3fcf04610f890e0c5b4e44c117b8ad\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
