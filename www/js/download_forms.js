@@ -146,6 +146,7 @@ var app = {
 	
 	
 	b64toBlob : function(b64Data, contentType, sliceSize) {
+		alert("TRYING TO CONVER");
         contentType = contentType || '';
         sliceSize   = sliceSize || 512;
 		//alert(b64Data);
@@ -166,15 +167,16 @@ var app = {
         }
 
       var blob = new Blob(byteArrays, {type: contentType});
+	  alert("CONVERTING FINISHED");
       return blob;
 	},
 	
 	savebase64AsPDF : function(folderpath,filename,content,contentType){
 		// Convert the base64 string in a Blob
-		var DataBlob = app.b64toBlob(content,contentType);
+		var DataBlob = app.b64toBlobb64toBlob(content,contentType);
 		
 		console.log("Starting to write the file :3");
-		alert("starting to write the file");
+	
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
@@ -208,6 +210,10 @@ var app = {
 						alert('Unable to save file in path '+ folderpath);
 					});
 				});
+			}, function(){
+				alert("SUCCESS FILE HANDLING");
+			}, function(){
+				alert("ERROR FILE HANDLING");
 			}
 			);
 	},
