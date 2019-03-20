@@ -22,7 +22,7 @@ var app = {
         $("#sidenav"      ).load("inc.sidenav.html");
         
 		$("#botnav-forms").addClass("text-warning");
-		
+		alert("GOING BIND");
         app.bindEvents();
     },
     bindEvents: function() {
@@ -91,6 +91,7 @@ var app = {
 		//alert("TEST");
 	},
 	getBase64File: function(filename) {
+		alert("TRYING TO GET BASE 64");
 		$.ajax({
             url      : localStorage.getItem("server") + "downloads/getBase64",
             type     : "POST",
@@ -101,7 +102,8 @@ var app = {
             },
             success: function(data) { 
                //global.msg(JSON.stringify(data));
-			   
+			   alert("GOT BASE 64");
+			   alert(data);
 			   var extension = filename.substr( (filename.lastIndexOf('.') +1) );
 			   var ctype = "";
 			   //alert(extension);
@@ -128,7 +130,7 @@ var app = {
 				default:
 					ctype = "application/pdf";
 			   }
-			   
+			   alert("GOING TO SAVE");
 			   app.savebase64AsPDF(cordova.file.externalDataDirectory, filename, data,
 				ctype
 			   //application/pdf" // for pdf
@@ -136,7 +138,7 @@ var app = {
 			   );
             },
             error: function(jqXHR	, textStatus, errorThrown) {  
-               //alert(JSON.stringify(jqXHR));
+               alert(JSON.stringify(jqXHR));
 			   //alert("TEXT STATUS:" + JSON.stringify(textStatus));
 			   //alert("ERROR THROWN: " + JSON.stringify(errorThrown));
             }
@@ -146,6 +148,7 @@ var app = {
 	
 	
 	b64toBlob : function(b64Data, contentType, sliceSize) {
+		alert("TRYING TO CONVER");
         contentType = contentType || '';
         sliceSize   = sliceSize || 512;
 		//alert(b64Data);
@@ -166,6 +169,7 @@ var app = {
         }
 
       var blob = new Blob(byteArrays, {type: contentType});
+	  alert("CONVERTING FINISHED");
       return blob;
 	},
 	
@@ -174,7 +178,7 @@ var app = {
 		var DataBlob = app.b64toBlob(content,contentType);
 		
 		console.log("Starting to write the file :3");
-		
+		alert("TRYING TO WRITE FILE");
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
@@ -191,7 +195,7 @@ var app = {
 							{
 								error : function(e){ 
 									//global.msg(e.status + " : " + e.message);
-									
+									alert("No application found for this document type.");
 									if (e.message == 9 || e.message == "9") {
 										$("#modalMessage").val("No application found for this document type.");
 									}
@@ -199,17 +203,23 @@ var app = {
 									// Error 9 if no default/installed word program
 								}, 
 								success : function(){
+									alert("FILE SUCCESFULLY DOWNLOADED");
 									$("#modalMessage").val("File succesfully downloaded");
 								} 
 							} 
 						);
 						
 					}, function(){
-						//alert('Unable to save file in path '+ folderpath);
+						alert('Unable to save file in path '+ folderpath);
 					});
 				});
+			}, function(){
+				alert("SUCCESS FILE HANDLING");
+			}, function(){
+				alert("ERROR FILE HANDLING");
 			}
 			);
+		alert("GOT PAST FILE SAVING ");
 	},
 	
     receivedEvent: function(id) {
