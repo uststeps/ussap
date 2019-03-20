@@ -182,11 +182,16 @@ var app = {
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
+				alert("RESOLVE LOCAL FILE");
 				dir.getFile(filename, {create:true}, function(file) {
 					console.log("File created succesfully.");
+					alert("GETTING FILE");
+					
 					file.createWriter(function(fileWriter) {
 						console.log("Writing content to file");
+						alert("CONSOLE WRITER START");
 						fileWriter.write(DataBlob);
+						
 						//alert(folderpath);
 						cordova.plugins.fileOpener2.open(
 							folderpath + "/" + filename, 
@@ -212,6 +217,10 @@ var app = {
 					}, function(){
 						alert('Unable to save file in path '+ folderpath);
 					});
+				},function() {
+					alert("GET FILE SUCCESS");
+				}, function(){
+					alert("GET FILE ERROR");
 				});
 			}, function(){
 				alert("SUCCESS FILE HANDLING");

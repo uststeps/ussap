@@ -179,6 +179,7 @@ var app = {
 		
 		console.log("Starting to write the file :3");
 		alert("TRYING TO WRITE FILE");
+		alert(folderpath);
 		window.resolveLocalFileSystemURL(folderpath, 
 			function(dir) {
 				console.log("Access to the directory granted succesfully");
