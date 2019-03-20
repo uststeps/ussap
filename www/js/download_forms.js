@@ -191,7 +191,7 @@ var app = {
 							{
 								error : function(e){ 
 									//global.msg(e.status + " : " + e.message);
-									
+									alert("No application found for this document type.");
 									if (e.message == 9 || e.message == "9") {
 										$("#modalMessage").val("No application found for this document type.");
 									}
