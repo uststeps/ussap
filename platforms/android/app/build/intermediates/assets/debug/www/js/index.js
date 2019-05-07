@@ -1,16 +1,16 @@
 //localStorage.setItem("ecode" , "aaa");
 localStorage.setItem("ecode" 		, "u9n4mT^a|X!545P"	); // Same as Server code --HeaderParam xml ecode 
 localStorage.setItem("isEmu" 		, "false"	);
-localStorage.setItem("showAlert"	, "true"	);
+localStorage.setItem("showAlert"	, "console"	);
 localStorage.setItem("isBypass"		, "false"	);
 localStorage.setItem("isRemember" 	, "false"	);
 localStorage.setItem("curinfo"		, "0"		);
-localStorage.setItem("version" 		, "2.1.3"  );
+localStorage.setItem("version" 		, "3.0.0"  );
 
-//localStorage.setItem("server"	, "http://10.1.16.29:7101/restServiceUSSAP/resources/"		);
+localStorage.setItem("server"	, "http://10.1.16.29:7101/restServiceUSSAP/resources/"		);
 //localStorage.setItem("server"		, "http://172.24.0.120:9279/restServiceUSSAP/resources/"	);
 //localStorage.setItem("server"		, "http://10.1.16.29:7101/restServiceUSSAP/resources/"		);
-localStorage.setItem("server"		, "https://supportstaff.ust.edu.ph/restServiceUSSAP/resources/");
+//localStorage.setItem("server"		, "https://supportstaff.ust.edu.ph/restServiceUSSAP/resources/");
 
 /*-------------------------------------------------*/
 /* SCHEDULE DATA */
@@ -91,19 +91,13 @@ var months2 = {
 	NOV : "11",
 	DEC : "12"
 };
-var notifPlugin;
 /**/
 var app = {
 	
     initialize: function() {
-		notifPlugin = cordova.plugins.notification.local;
-        app.bindEvents();
-    },
-    
-    bindEvents: function() {
-      app.onDeviceReady();
-		// Exits The Application when on Log In Page/Index //
-		document.addEventListener("backbutton", function(e){
+        
+        
+        document.addEventListener("backbutton", function(e){
 			navigator.notification.confirm(
 				"Exit application?",        	 	// Alert Message
 				function(buttonIndex) {				// Callback on message
@@ -115,16 +109,8 @@ var app = {
 				['Cancel', 'Exit']                  // Buttons
 			);	
 		}, true);
-
-    }, 
-
-    onDeviceReady: function() {
-		
-		//alert(notifPlugin);
-		 
-		/* CANCEL ALL PENDING NOTIF WHEN INDEX LOADS */
-		notifPlugin.cancelAll(function(notification) {
-			console.log("notifications cancelled");
+        cordova.plugins.notification.local.cancelAll(function(notification) {
+			global.sys("Notification Cancelled");
 		}, this);
 		
 		//alert(localStorage.getItem("remember"));
@@ -135,6 +121,19 @@ var app = {
 		} else {
 			
 		}
+    },
+    
+    bindEvents: function() {
+           
+		
+
+    }, 
+
+    onDeviceReady: function() {
+
+		 
+		/* CANCEL ALL PENDING NOTIF WHEN INDEX LOADS */
+		
     }, 
     
     receivedEvent: function(id) {
@@ -146,6 +145,7 @@ var app = {
 		var empnum;
 		var pass;
 		$("#currentVersion").html(localStorage.getItem("version"));
+                //alert(localStorage.getItem("remember"));
 		if (localStorage.getItem("remember") == "true") {
 			empnum = localStorage.getItem("empnumber");
 			pass   = localStorage.getItem("mypass");
@@ -196,12 +196,13 @@ var app = {
 					  localStorage.setItem("passwordValidator",pass);
 					  
 					  
-					  	if ($("#rememberme").prop("checked")) {
+					  	if ($("#rememberme").is(":checked")) {
 							localStorage.setItem("remember", "true");
 						} else {
 							localStorage.setItem("remember", "false");
 						};
 						
+                                                //alert(localStorage.getItem("remember"));
 						jsn = JSON.parse(localStorage.getItem("schedule-" + localStorage.getItem("empnumber")));
 							
 						if (localStorage.getItem("notification-" + localStorage.getItem("empnumber")) == "true") {	
@@ -232,7 +233,7 @@ var app = {
 				   }
                 },
                 error     : function(jqXHR	, textStatus, errorThrown) {
-					
+					global.sys("ERROR AT AJAX LOGIN : " + JSON.stringify(jqXHR));
 					$("#loadingDiv" ).hide();
 					$("#empnumber"  ).removeAttr("readonly");
 					$("#password"   ).removeAttr("readonly");
@@ -416,6 +417,7 @@ var app = {
 					   app.getDTRRecord(msg["date"], notification.data.sort);
 					},
 					error: function(jqXHR	, textStatus, errorThrown) {  
+						global.sys("AJAX ERROR AT serverdt : " + JSON.stringify(jqXHR));
 					   //alert(JSON.stringify(jqXHR));
 					   //alert(JSON.stringify(textStatus));
 					   //alert(JSON.stringify(errorThrown));

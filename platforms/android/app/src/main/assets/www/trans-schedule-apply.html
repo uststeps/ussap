@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" / <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-   <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file; style-src 'self' 'unsafe-inline'; script-src 'self'  'unsafe-inline' 'unsafe-eval' ">
+    <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file; style-src 'self' 'unsafe-inline'; script-src 'self'  'unsafe-inline' 'unsafe-eval' ">
 	 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/jquery.js"></script>
@@ -91,20 +91,27 @@
 							</div>
 						</div>
 						<input type="hidden" id="applicationIdHolder" />
-						<div class="col col-4">
+						<div class="col col-12">
 						
-							<input readonly onchange="app.onFromSelect()" id="date_from" type="text" class="form-control"/>
+							<input readonly onchange="app.onFromSelect()"  placeholder="DATE FROM" id="date_from" type="text" class="form-control"/>
 						</div>
-						<div class="col col-4">
-							<select onchange="app.onFromSelect()" class="form-control" id="typeSelector">
+						<div class="col col-12">
+                                                    
+                                                    <div class="btn-group btn-group-justified w-100">
+                                                        <button type="button" onclick="app.changeFrom('only')" class="btn btn-secondary w-100 only-button from-button">ONLY</button>
+                                                        <button type="button" onclick="app.changeFrom('onward')" class="btn btn-secondary w-100 onward-button from-button">ONWARD</button>
+                                                        <button type="button" onclick="app.changeFrom('to')" class="btn btn-secondary w-100 to-button from-button">TO</button>
+                                                    </div>
+                                                    
+							<select style="display:none;" onchange="app.onFromSelect()" class="form-control" id="typeSelector">
 									<option value="-1"></option>
 								  <option value="9FAA65992CFD1AA5557FFE22F191F793">ONLY</option>
                                   <option value="02FFBD1C5AA4FAC2DCC599BB4CF4A761">ONWARDS</option>
                                   <option value="626F3AA8014AB6FD3D0F87E311D49C9A">TO</option>
 							</select>
 						</div>
-						<div class="col col-4">
-							<input onchange="app.onFromSelect()" style="display:none;" readonly id="date_to" type="text" class="form-control"/>
+						<div class="col col-12">
+							<input onchange="app.onFromSelect()" style="display:none;" readonly placeholder="DATE TO" id="date_to" type="text" class="form-control"/>
 						</div>
 						<div class="col w-100"><br/></div>
 						
@@ -116,7 +123,7 @@
 						</div>
 						<div class="col col-8">
 							<input  id="Sunday-cadId" type="hidden" />
-							<select  id="Sunday" type="text" class="form-control daySelect">
+							<select  id="Sunday" class="form-control daySelect">
 							</select>
 						</div>
 					</div>

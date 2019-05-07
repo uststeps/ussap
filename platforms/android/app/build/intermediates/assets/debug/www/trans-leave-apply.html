@@ -153,20 +153,27 @@
 				  <div class="p-3 font-weight-bold">Leave Application</div>
 				  <div class="card-body">
 					  <div class="row">
-						<div class="col w-100 card-title">Leave Type</div>
+                                              <div class="col w-100 card-title">Leave Type</div>
 							<div class="w-100"></div>
-						<div class="col">
-						<select class="form-control w-100" onchange="app.onChangeLeaveType()" id="leaveType">
+						<div id="leaveHolder-div" class="col">
+                                                    
+                                                    <div class="btn-group btn-group-justified w-100">
+                                                        <button type="button" onclick="app.changeLeaveType('vl')" class="btn btn-secondary w-100 vl-button leavetype-button">VACATION</button>
+                                                        <button type="button" onclick="app.changeLeaveType('sl')" class="btn btn-secondary w-100 sl-button leavetype-button">SICK</button>
+                                                        <button type="button" onclick="app.changeLeaveType('bl')" class="btn btn-secondary w-100 bl-button leavetype-button">BIRTHDAY</button>
+                                                    </div>
+                                                    
+						<select style="display:none;" class="form-control w-100" onchange="app.onChangeLeaveType()" id="leaveType">
 						 <option value="-1"></option>
 						 <option value="D0CFC7C3BCDD77C3B7033A8409325E0D">
-                            BIRTHDAY LEAVE
-                          </option>
-                          <option value="1D9B3909DA8A22A9058FA85C3A0CFCFB">
-                            SICK LEAVE
-                          </option>
-                          <option value="139762731B9FD2F651EEFA3556C2D39B">
-                            VACATION LEAVE
-                          </option>
+                                                    BIRTHDAY LEAVE
+                                                  </option>
+                                                  <option value="1D9B3909DA8A22A9058FA85C3A0CFCFB">
+                                                    SICK LEAVE
+                                                  </option>
+                                                  <option value="139762731B9FD2F651EEFA3556C2D39B">
+                                                    VACATION LEAVE
+                                                  </option>
 						</select>
 						
 						</div>

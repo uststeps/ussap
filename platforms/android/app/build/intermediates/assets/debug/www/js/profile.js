@@ -147,8 +147,37 @@ var app = {
 		}
 			   
     },
+    
+    printCert:function(certId, certType){
+       // window.open('http://172.20.0.40:8888/reports/rwservlet?REPORT=hr_seminar_certificate2_ussap.rdf&DESFORMAT=PDF&DESTYPE=CACHE&P_HR_S_ID=44&P_EMP=5320&P_SESSION=&USERID=HR_USER4/hr_user4@domingo&ORACLE_SHUTDOWN=YES&PARAMFORM=NO ' , '_system', 'location=yes');
+        //alert('http://172.20.0.40:8888/reports/rwservlet?REPORT=' + certType + '&DESFORMAT=PDF&DESTYPE=CACHE&P_HR_S_ID=' + certId + '&P_EMP=' + localStorage.getItem("empnumber") + '&P_SESSION=&USERID=HR_USER4/hr_user4@domingo&ORACLE_SHUTDOWN=YES&PARAMFORM=NO');
+        window.open('http://172.20.0.40:8888/reports/rwservlet?REPORT=' + certType + '&DESFORMAT=PDF&DESTYPE=CACHE&P_HR_S_ID=' + certId + '&P_EMP=' + localStorage.getItem("empnumber") + '&P_SESSION=&USERID=HR_USER4/hr_user4@domingo&ORACLE_SHUTDOWN=YES&PARAMFORM=NO', '_system', 'location=yes')
+        
+        /*
+          var fileTransfer = new FileTransfer();
+		var uri = 'http://172.20.0.40:8888/reports/rwservlet?REPORT=' + certType + '&DESFORMAT=PDF&DESTYPE=CACHE&P_HR_S_ID=' + certId + '&P_EMP=' + empnumber + '&P_SESSION=&USERID=HR_USER4/hr_user4@domingo&ORACLE_SHUTDOWN=YES&PARAMFORM=NO';
+		
+		fileTransfer.download(
+                    uri,
+                    cordova.file.dataDirectory  + certId +".pdf"	,
+                    function(entry) {
+			//global.sys("download complete: " + entry.toURL());
+			//$("#dpHolder").attr("src",entry.toURL());
+                        window.open('https://docs.google.com/viewer?url=http://www.example.com/test.pdf&embedded=true', '_blank', 'location=yes'); 
+                   
+                        alert("DOWNLOAD COMPLETE: " + entry.toURL());
+                    },
+                    function(error) {
+			alert("download error source " + error.source);
+			//global.sys("download error target " + error.target);
+			//alert("download error code" 	  + error.code);
+                    },
+                    true
+		);
+        */
+    },
 	
-	setProfile: function(msg,x) {
+    setProfile: function(msg,x) {
 		//global.sys("RECEIVED DATA: " + JSON.stringify(msg));
 		var n = 0;
 		
@@ -514,13 +543,29 @@ var app = {
 			for (i = 0; i < n ; i++) {
 				var a = i.toString();
 				var controls = '';
+                                var printButton="";
+                                var controlButton = "";
+                                alert(msg[a]["print"] );
+                                if (msg[a]["print"] == 1) {
+                                    //printButton = '<a target="_BLANK" href="http://docs.google.com/gview?embedded=true&url=http://172.20.0.40:8888/reports/rwservlet?REPORT=hr_seminar_certificate2_ussap.rdf&DESFORMAT=PDF&DESTYPE=CACHE&P_HR_S_ID=44&P_EMP=5320&P_SESSION=&USERID=HR_USER4/hr_user4@domingo&ORACLE_SHUTDOWN=YES&PARAMFORM=NO">Print</a>';
+                                    printButton=' <button class="p-0 btn btn-link" onclick="app.printCert(\'' + msg[a]["sem_id"] + '\',\'' + msg[a]["print_type"] + '\')" title="Pinrt Certificate"><i class="fas fa-print"></i></button>'
+                                }
+                                
+                                
+                            
+					
+				
 				if (msg[a]["sem_id"] == 0) {
-					controls = '	<p class="text-right">'
-					+ '		<button class="p-0 btn btn-link" onclick="app.loadEditor(\'' + msg[a]["tr_id"] + '\',\'' + a + '\')" title="Edit Record"><i class="fas fa-edit"></i></button>'
-					+ '		<button class="p-0 btn btn-link ml-3" title="Delete"  onclick="app.confirmDelete(' + msg[a]["tr_id"] + ')"><i class="far fa-trash-alt text-danger"></i></button>'
-					+ '	</p>';
+                                    
+                                  controlButton =  '<button class="p-0 btn btn-link" onclick="app.loadEditor(\'' + msg[a]["tr_id"] + '\',\'' + a + '\')" title="Edit Record"><i class="fas fa-edit"></i></button>'
+                                                  + '<button class="p-0 btn btn-link ml-3" title="Delete"  onclick="app.confirmDelete(' + msg[a]["tr_id"] + ')"><i class="far fa-trash-alt text-danger"></i></button>';
+                                    
+
 				}
-			
+                                controls = '	<p class="text-right">' 
+                                        + printButton
+					+ controlButton
+					+ '	</p>';
 				
 				$("#tbl").append(''
 
