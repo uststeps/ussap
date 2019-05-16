@@ -10,6 +10,7 @@ var holidays;
 var holidaysTotal = 0;
 var longpress = false;
 var menuOpen = false;
+    var isScrolling = false;
 var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var month = {
 	"Jan" : "01",
@@ -64,6 +65,23 @@ var app = {
 
 		});
 		
+        window.addEventListener('scroll', function ( event ) {
+                isScrolling = true;
+                // Clear our timeout throughout the scroll
+                window.clearTimeout( isScrolling );
+                console.log( 'is Scrolling' );
+                // Set a timeout to run after scrolling ends
+                isScrolling = setTimeout(function() {
+
+                        // Run the callback
+                        isScrolling = false;
+                        console.log( 'Scrolling has stopped.' );
+
+                }, 500);
+
+        }, false);        
+
+                
         $("#sidenav").load("inc.sidenav.html");
 		$("#botnav-profile").addClass("text-warning");
 		
@@ -83,6 +101,7 @@ var app = {
 	
 	doOptionOpen: function(lId){
 		if (menuOpen){
+                               if (!isScrolling){
 			menuOpen = false;
 			
 			$('#optionModal').modal('show');
@@ -97,10 +116,12 @@ var app = {
 				$("#delButton").show();
 				$("#canEditWarning").hide();
 			}
+                               }
 			
 		} else {
-			
+                    if (!isScrolling){
 			window.location = "trans-schedule-details.html";
+                  }
 		}
 	},
 	
@@ -386,6 +407,25 @@ var app = {
 		
 
 	},
+        changeFrom:function(fromType) {
+            
+            $(".only-button").attr('class','btn btn-secondary w-100 only-button from-button');
+             $(".onward-button").attr('class','btn btn-secondary w-100 onward-button from-button');
+              $(".to-button").attr('class','btn btn-secondary w-100 to-button from-button');
+              
+              $("."+fromType+"-button").attr('class','btn btn-warning w-100 '+ fromType+'-button from-button');
+            if (fromType == "only") {
+                $("#typeSelector").val("9FAA65992CFD1AA5557FFE22F191F793");
+            } else if (fromType == "onward") {
+                 $("#typeSelector").val("02FFBD1C5AA4FAC2DCC599BB4CF4A761");
+            } else if (fromType == "to") {
+                 $("#typeSelector").val("626F3AA8014AB6FD3D0F87E311D49C9A");
+            }
+            
+            app.onFromSelect();
+            
+        }
+        ,
 	
 	onFromSelect: function() {
 		
@@ -422,7 +462,9 @@ var app = {
 						
 						} else if ($("#applicationIdHolder").val() == "null" ){
 							
-						} else {
+						} else if ($("#applicationIdHolder").val().length <= 0 ){
+							
+						}else {
 							app.initializeEdit($("#applicationIdHolder").val());
 						}
 						
@@ -479,12 +521,21 @@ var app = {
 							dateTo = msg["appData"]["date_to"];
 							$('#date_to').datepicker("setDate", new Date(app.reformatDate(dateTo)) );
 						}
+                                                
+                                                
+                                                   
+         
+          
+     
 						
 						if (effectivity == 1) {// 1 ONLY
+                                                           $(".only-button").attr('class','btn btn-warning w-100 only-button from-button');
 							$("#typeSelector").val("9FAA65992CFD1AA5557FFE22F191F793");
 						} else if (effectivity ==2) {// 2 ONWARDS
+                                                       $(".onward-button").attr('class','btn btn-warning w-100 onward-button from-button');
 							$("#typeSelector").val("02FFBD1C5AA4FAC2DCC599BB4CF4A761");
 						} else if (effectivity == 3){// 3 TO
+                                                      $(".to-button").attr('class','btn btn-warning w-100 to-button from-button');
 							$("#typeSelector").val("626F3AA8014AB6FD3D0F87E311D49C9A");
 						} 
 						
@@ -853,6 +904,7 @@ var app = {
 						xhr.setRequestHeader('applicationData'	 ,JSON.stringify(applicationData));
 					},
 					success: function(msg) { 
+						//alert(JSON.stringify(msg));
 						if (isEdit){
 							localStorage.setItem("alert-leave-msg","Application successfully updated");
 						} else {
@@ -862,6 +914,7 @@ var app = {
 						window.location = "trans-schedule.html";
 					},
 				    error: function(jqXHR	, textStatus, errorThrown) {
+						alert(JSON.stringify(jqXHR));
 						if (isEdit){
 							localStorage.setItem("alert-leave-msg","There was an error updating application");
 						} else {
@@ -876,3 +929,4 @@ var app = {
 	}
 
 };
+ 

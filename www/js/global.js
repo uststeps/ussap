@@ -4,7 +4,7 @@ var global = {
 	msg : function(msg, title) {
 		
 		if (title == null){ 
-		navigator.notification.confirm(msg, function(index) {},"Notice", ["Ok"]);
+			navigator.notification.confirm(msg, function(index) {},"Notice", ["Ok"]);
 		} else {
 			navigator.notification.confirm(msg, function(index) {},title, ["Ok"]);
 		}

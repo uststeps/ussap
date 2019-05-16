@@ -10,6 +10,7 @@ var holidays;
 var holidaysTotal = 0;
 var longpress = false;
 var menuOpen = false;
+var isScrolling = false;
 var month = {
 	"Jan" : "01",
 	"Feb" : "02",
@@ -55,18 +56,26 @@ var app = {
             'tolerance': 70
         });
 		slideout.on('beforeopen', function() {
+                     isScrolling = true;
 				$("#botNav").fadeOut();
 		});
 
 		slideout.on('beforeclose', function() {
+     
 				$("#botNav").fadeIn();
+
+		});
+                
+                slideout.on('close', function() {
+                    isScrolling = false;
+			
 
 		});
 		
         $("#sidenav").load("inc.sidenav.html");
-		$("#botnav-profile").addClass("text-warning");
+	$("#botnav-profile").addClass("text-warning");
 		
-      
+       
   
     },
     
@@ -259,7 +268,21 @@ var app = {
 	
 
 	getLeaveList_Initial: function(){
-		
+		  window.addEventListener('scroll', function ( event ) {
+                        isScrolling = true;
+                        // Clear our timeout throughout the scroll
+                        window.clearTimeout( isScrolling );
+                        console.log( 'is Scrolling' );
+                        // Set a timeout to run after scrolling ends
+                        isScrolling = setTimeout(function() {
+
+                                // Run the callback
+                                isScrolling = false;
+                                console.log( 'Scrolling has stopped.' );
+
+                        }, 500);
+
+                }, false);      
 		app.ajaxLeaves("current");
 		var totalHeight = parseInt($("#botNav").height()) + (parseInt($("#botNav").css("padding-top")) * 8)
 		$("#addButton").css("bottom", totalHeight );
@@ -343,9 +366,12 @@ var app = {
 		
 		if ($("#leaveType").val() == "-1" ) {
 			$("#leaveType").attr("class","form-control w-100 border-danger");
+                        $("#leaveHolder-div").attr("class", "border-danger col");
+                        
 			return false;
 		} else {
 			$("#leaveType").attr("class","form-control");
+                        $("#leaveHolder-div").attr("class", "col");
 		}
 		
 		var findError = 0;
@@ -383,12 +409,13 @@ var app = {
 			var SplittedDate = $(obj).val().split('-');
 			var reformat = month[SplittedDate[1]] + "/" + SplittedDate[0] + "/" + SplittedDate[2];
 				
-			var difference = app.getDateDifference(serverDate, reformat);
+			var difference = app.getDateDifference( reformat,serverDate);
 			
 			if ($(obj).val().length <= 0) {
 				$(obj).attr("class","dateCounter form-control border-danger");
 				findError++;
 			} else {
+                            
 				if (app.checkIfHoliday($(obj).val())) {
 					$(obj).attr("class","dateCounter form-control border-danger");
 					findHoliday++;
@@ -402,7 +429,8 @@ var app = {
 						//$(obj).attr("class","dateCounter form-control");
 						// Sick Leave
 						if ($("#leaveData").val() != "1D9B3909DA8A22A9058FA85C3A0CFCFB") {
-							if (difference <= 3) {
+                                                       // alert(difference);
+							if (difference >= 3) {
 								findLate++;
 							}
 						} 
@@ -418,6 +446,8 @@ var app = {
 		});
 		
 		
+                
+                
 		if (findError > 0) {
 			return false;
 		}
@@ -518,6 +548,7 @@ var app = {
 					xhr.setRequestHeader('ecode'     , localStorage.getItem("ecode") 	);
 				},
 				success: function(msg) { 
+                                        //alert(JSON.stringify(msg));
 					localStorage.setItem("alert-leave", "success");
 					if ($("#actionType").val() == "new") {
 						localStorage.setItem("alert-leave-msg", "Leave created successfully");
@@ -528,7 +559,7 @@ var app = {
 				},
 				error: function(jqXHR	, textStatus, errorThrown) {
 					alert("There was an error with your request, please try again");
-					alert(JSON.stringify(jqXHR));
+					//alert(JSON.stringify(jqXHR));
 				}
 			}); 
 			
@@ -630,6 +661,24 @@ var app = {
 		}
 		
 	},
+        
+        changeLeaveType: function(leaveType) {
+          $(".vl-button").attr("class","btn btn-secondary w-100 vl-button leavetype-button");
+          $(".sl-button").attr("class","btn btn-secondary w-100 sl-button leavetype-button");
+          $(".bl-button").attr("class","btn btn-secondary w-100 bl-button leavetype-button");
+          $("." + leaveType + "-button").attr("class","btn btn-warning w-100 " + leaveType + "-button leavetype-button");
+          
+          if (leaveType == "bl") {
+              $("#leaveType").val("D0CFC7C3BCDD77C3B7033A8409325E0D");
+          } else if (leaveType == "sl") {
+              $("#leaveType").val("1D9B3909DA8A22A9058FA85C3A0CFCFB");
+          } else {
+              $("#leaveType").val("139762731B9FD2F651EEFA3556C2D39B");
+          }
+          
+          app.onChangeLeaveType();
+        
+        },
 	
 	onChangeLeaveType: function() {
 		$("#dateTable").html("");
@@ -799,7 +848,9 @@ var app = {
 				serverDate = msg["ServerDate"].split(' ')[0];
 				birthdateLeaveCount = msg["BirthdayLeaveCount"];
 			
-			
+                                if (birthdateLeaveCount > 0) {
+                                    $("#BtnBirthday").remove();
+                                }
 			
 				
 				if (msg["LastFiled"] != null ) {
@@ -850,10 +901,13 @@ var app = {
 					var leaveType = msg["leave_application"]["leave_type_name"];
 					if (leaveType == "VL") {
 						$("#leaveType").val("139762731B9FD2F651EEFA3556C2D39B");
+                                                $(".vl-button").attr("class","btn btn-primary w-100 vl-button leavetype-button");
 					} else if ( leaveType == "SL") {
 						$("#leaveType").val("1D9B3909DA8A22A9058FA85C3A0CFCFB");
+                                                 $(".sl-button").attr("class","btn btn-primary w-100 sl-button leavetype-button");
 					} else {
 						$("#leaveType").val("D0CFC7C3BCDD77C3B7033A8409325E0D");
+                                                 $(".bl-button").attr("class","btn btn-primary w-100 bl-button leavetype-button");
 					}
 					app.onChangeLeaveType();
 					
@@ -896,6 +950,7 @@ var app = {
 	
 	doOptionOpen: function(lId){
 		if (menuOpen){
+                    if (!isScrolling){
 			menuOpen = false;
 			
 			$('#optionModal').modal('show');
@@ -910,9 +965,12 @@ var app = {
 				$("#delButton").show();
 				$("#canEditWarning").hide();
 			}
+                    }
 			
 		} else {
+                     if (!isScrolling){
 			app.onViewDetails(lId);
+                    }
 		}
 	},
 	
@@ -960,6 +1018,16 @@ var app = {
 				
 				var totalDaysSum = 0;
 				
+                                if (leave_app["cancel_flag"] == 1) {
+                                    
+                                    $(".cancelRem").show();
+                                        $("#cancel_flag").html("CANCELLED");
+                                        $("#remark_cancel").html(leave_app["cancel_reason"]);
+                                            
+                                    } else {
+                                        
+                                          $(".cancelRem").hide();
+                                    }
 				
 				$("#leave_status_list").html("");
 				$.each(msg["leave_details"], function(index, element) {
@@ -993,6 +1061,10 @@ var app = {
 					
 					totalDaysSum =  element["total_days"];
 					
+                                        
+                                        
+                                    
+                                        
 					$("#leave_status_list").append(
 			
 					   '<div class="row">' 
@@ -1024,6 +1096,7 @@ var app = {
 						+		'</div>'
 						+	'</div>'
 						+ '</div>'
+                                                
 					+ '</div>'
 					+ '</div>'
 					);
